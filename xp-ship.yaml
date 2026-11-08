@@ -80,7 +80,7 @@ agents:
     routes:
       # No review tokens spent on red tests or untraced criteria.
       - to: blocked
-        when: "not output.tests_passed or output.missing_criteria"
+        when: "{{ not output.tests_passed or output.missing_criteria | length > 0 }}"
       - to: reviews
 
   - name: scope_review
@@ -145,7 +145,7 @@ agents:
       reasons: { type: array }
     routes:
       - to: approve
-        when: "output.passed"
+        when: "{{ output.passed }}"
       - to: blocked
 
   - name: approve
