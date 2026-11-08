@@ -14,5 +14,5 @@ Expects `frankherchet/skills` checked out next to this repo (the xp plugin is lo
 
 ```sh
 conductor validate xp-ship.yaml
-conductor run xp-ship.yaml --web --input repo=<path> --input issue=<n>
+conductor run xp-ship.yaml --web --input repo=$HOME/git/<repo> --input issue=<n>
 ```

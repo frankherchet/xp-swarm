@@ -2,7 +2,7 @@
 # -> script gate -> human gate -> PR.
 #
 # Run from this directory, pointing at the repo and issue to ship:
-#   conductor run xp-ship.yaml --web --input repo=~/git/skills --input issue=16
+#   conductor run xp-ship.yaml --web --input repo=$HOME/git/skills --input issue=16
 
 workflow:
   name: xp-ship
@@ -19,7 +19,7 @@ workflow:
     repo:
       type: string
       required: true
-      description: Path to the repository to ship
+      description: Absolute path to the repository to ship (~ is not expanded)
     issue:
       type: string
       required: true
